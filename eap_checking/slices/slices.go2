@@ -1,0 +1,35 @@
+// Package slices implements various slice algorithms.
+package slices
+
+import "fmt"
+
+func MyMap[T1, T2 any](s []T1, f func(T1) T2) []T2 {
+	r := make([]T2, len(s))
+	for i, v := range s {
+		r[i] = f(v)
+	}
+	return r
+}
+
+
+func Check() {
+	s := []int{1, 2, 3}
+	floats := MyMap(s, func(i int) float64 { return float64(i) })
+	fmt.Println(floats)
+}
+
+
+
+
+
+// Now floats is []float64{1.0, 2.0, 3.0}.
+
+func Map2(vs []string, f func(string) string) []string {
+	vsm := make([]string, len(vs))
+	for i, v := range vs {
+		vsm[i] = f(v)
+	}
+	return vsm
+}
+
+// Find usages _

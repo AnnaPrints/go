@@ -1,0 +1,1 @@
+String foo = "helloworld";  // ctrl-a between hello and world

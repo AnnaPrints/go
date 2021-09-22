@@ -1,0 +1,7 @@
+package chans
+
+import "runtime"
+
+func Ranger[T any]() (*Sender[T], *Receiver[T]) {
+	c := male(chan T)
+}
